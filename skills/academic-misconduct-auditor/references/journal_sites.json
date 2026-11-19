@@ -1,0 +1,25 @@
+{
+  "_说明": "期刊官网登记表。match=刊名关键词；detail_url_template 与 direct_pdf_regex_page 同时给出时，fetch_fulltext.py 会抓详情页并按正则取 PDF 直链。只登记官网自己公开提供、无需登录的 PDF。未填模板的条目仅用于 purchase_list 提示与人工核对。新增站点前先在浏览器确认无需登录即可下载。",
+  "sites": [
+    {
+      "name": "中国病案",
+      "match": ["中国病案"],
+      "home": "http://www.zgba.org.cn/",
+      "access": "官网按期公开「摘要PDF」，无需登录；全文需订阅",
+      "level": "abstract",
+      "license": "journal-free-abstract"
+    },
+    {
+      "name": "中华医学期刊网",
+      "match": ["中华"],
+      "home": "https://medjournals.cn/",
+      "access": "读者俱乐部会员（付费）：每年 200 篇 PDF 下载额度 + 自选一刊；非免费，属合法付费渠道，写入 purchase_list 供人工决策",
+      "level": "fulltext-paid"
+    },
+    {
+      "name": "知网腾云期刊站（通用）",
+      "match": [],
+      "access": "多数 CNKI 腾云/玛格泰克建站的期刊官网，往期目录页可免费看摘要，部分刊开放往期 PDF；需逐刊在浏览器确认后再登记模板"
+    }
+  ]
+}
