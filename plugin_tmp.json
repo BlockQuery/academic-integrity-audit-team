@@ -1,0 +1,182 @@
+{
+  "name": "academic-integrity-audit-team",
+  "version": "1.0.0",
+  "description": "Five-specialist academic integrity audit team: lock the subject's identity, sweep all public papers and grants, forensically audit every paper, verify funding-rule compliance, and deliver a print-ready PDF audit report.",
+  "author": {
+    "name": "郑博"
+  },
+  "agents": [
+    "./agents/academic-integrity-audit-team-lead.md",
+    "./agents/identity-verifier.md",
+    "./agents/osint-investigator.md",
+    "./agents/paper-forensics.md",
+    "./agents/grant-compliance.md",
+    "./agents/report-compiler.md"
+  ],
+  "skills": [
+    "./skills/academic-misconduct-auditor"
+  ],
+  "expertType": "team",
+  "agentName": "academic-integrity-audit-team-lead",
+  "teamInfo": {
+    "leadAgent": "academic-integrity-audit-team-lead",
+    "memberAgents": [
+      "identity-verifier",
+      "osint-investigator",
+      "paper-forensics",
+      "grant-compliance",
+      "report-compiler"
+    ]
+  },
+  "displayName": {
+    "en": "Academic Integrity Audit Team",
+    "zh": "学术诚信审计专家团"
+  },
+  "profession": {
+    "en": "Academic Integrity Audit Team",
+    "zh": "学术诚信审计专家团"
+  },
+  "displayDescription": {
+    "en": "Five specialists lock the subject's identity, sweep all papers and grants, audit each paper for predatory venues and data fabrication, verify grant labeling, and deliver an evidence-chained PDF report.",
+    "zh": "五人分工：锁定身份、摸底全部论文与项目、逐篇取证、基金标注核验，输出可举证的 PDF 审计报告。"
+  },
+  "avatar": "avatars/team.png",
+  "categoryId": "11-SecurityCompliance",
+  "defaultInitPrompt": {
+    "zh": "审计这个人：姓名、单位、职称我给你，先确认身份，再摸底全部中英文论文和参与项目，逐篇查水刊、数据造假、挂靠代写、基金违规标注，最后出 PDF 报告",
+    "en": "Audit this person: I'll give name, affiliation and title. Lock the identity first, then sweep all Chinese and English papers and grants, audit each paper for predatory venues, data fabrication, ghostwriting signals and grant-labeling violations, and finish with a PDF report."
+  },
+  "plugin": "academic-integrity-audit-team",
+  "tags": [
+    {
+      "en": "Academic Integrity Audit",
+      "zh": "学术诚信审计"
+    },
+    {
+      "en": "Paper Forensics",
+      "zh": "论文造假取证"
+    },
+    {
+      "en": "Grant Compliance",
+      "zh": "基金项目合规"
+    }
+  ],
+  "quickPrompts": [
+    {
+      "zh": "审计这个人：姓名、单位、职称我给你，先确认身份，再摸底全部中英文论文和参与项目，逐篇查水刊、数据造假、挂靠代写、基金违规标注，最后出 PDF 报告",
+      "en": "Audit this person: I'll give name, affiliation and title. Lock the identity first, then sweep all Chinese and English papers and grants, audit each paper for predatory venues, data fabrication, ghostwriting signals and grant-labeling violations, and finish with a PDF report."
+    },
+    {
+      "zh": "只做摸底：把某人的中英文论文清单和参与项目拉全，给我总量、年度分布、期刊档次和通讯作者占比",
+      "en": "Reconnaissance only: pull the complete Chinese and English paper list plus all grants, and report totals, year distribution, venue tiers and corresponding-author share."
+    },
+    {
+      "zh": "这篇论文标注了国自然基金号，判断是否属于无关内容标注、跨项目重复交账或虚假结题",
+      "en": "This paper carries an NSFC grant number — judge whether it is an off-topic labeling, a cross-grant double count, or a false final report."
+    }
+  ],
+  "members": [
+    {
+      "id": "academic-integrity-audit-team-lead",
+      "name": {
+        "en": "He Bingzheng",
+        "zh": "何秉正"
+      },
+      "displayName": {
+        "en": "He Bingzheng",
+        "zh": "何秉正"
+      },
+      "profession": {
+        "en": "Chief Audit Officer",
+        "zh": "首席审计官"
+      },
+      "avatar": "avatars/academic-integrity-audit-team-lead.png",
+      "role": "lead"
+    },
+    {
+      "id": "identity-verifier",
+      "name": {
+        "en": "Zhen Liyan",
+        "zh": "甄立言"
+      },
+      "displayName": {
+        "en": "Zhen Liyan",
+        "zh": "甄立言"
+      },
+      "profession": {
+        "en": "Identity Verification Specialist",
+        "zh": "身份核验专家"
+      },
+      "avatar": "avatars/identity-verifier.png",
+      "role": "member"
+    },
+    {
+      "id": "osint-investigator",
+      "name": {
+        "en": "Luo Jianwei",
+        "zh": "罗见微"
+      },
+      "displayName": {
+        "en": "Luo Jianwei",
+        "zh": "罗见微"
+      },
+      "profession": {
+        "en": "Open-Source Intelligence Investigator",
+        "zh": "公开信息侦察员"
+      },
+      "avatar": "avatars/osint-investigator.png",
+      "role": "member"
+    },
+    {
+      "id": "paper-forensics",
+      "name": {
+        "en": "Wen Jianqiu",
+        "zh": "文鉴秋"
+      },
+      "displayName": {
+        "en": "Wen Jianqiu",
+        "zh": "文鉴秋"
+      },
+      "profession": {
+        "en": "Paper Forensics Auditor",
+        "zh": "论文取证审计师"
+      },
+      "avatar": "avatars/paper-forensics.png",
+      "role": "member"
+    },
+    {
+      "id": "grant-compliance",
+      "name": {
+        "en": "Ji Shouze",
+        "zh": "纪守则"
+      },
+      "displayName": {
+        "en": "Ji Shouze",
+        "zh": "纪守则"
+      },
+      "profession": {
+        "en": "Research Grant Compliance Auditor",
+        "zh": "科研项目合规审计师"
+      },
+      "avatar": "avatars/grant-compliance.png",
+      "role": "member"
+    },
+    {
+      "id": "report-compiler",
+      "name": {
+        "en": "Pei Chengce",
+        "zh": "裴成册"
+      },
+      "displayName": {
+        "en": "Pei Chengce",
+        "zh": "裴成册"
+      },
+      "profession": {
+        "en": "Audit Report Editor-in-Chief",
+        "zh": "审计报告主编"
+      },
+      "avatar": "avatars/report-compiler.png",
+      "role": "member"
+    }
+  ]
+}

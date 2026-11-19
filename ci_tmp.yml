@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  syntax-check:
+    name: Python 语法检查
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: 编译所有脚本
+        run: python -m compileall -q skills/academic-misconduct-auditor/scripts tools
+      - name: 脚本 --help 冒烟测试
+        run: |
+          for f in skills/academic-misconduct-auditor/scripts/*.py; do
+            python "$f" --help > /dev/null 2>&1 || echo "注意: $f 无 --help 入口"
+          done
+
+  privacy-guard:
+    name: 脱敏守卫（禁止真实身份信息入库）
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 扫描已知真实人名/单位/标识号
+        run: |
+          PATTERN='姜喜玲|Xiling Jiang|Jiang Xiling|张丽敏|赤峰|Chifeng|内蒙古|Inner Mongolia|A5019152641|81960208|82361148724|NJZZ22160'
+          if grep -rEn "$PATTERN" \
+            --include='*.md' --include='*.py' --include='*.json' --include='*.csv' \
+            --exclude='CHANGELOG.md' . ; then
+            echo "::error::检测到疑似未脱敏的真实身份信息，请替换为示例值。"
+            exit 1
+          fi
+          echo "脱敏检查通过：未发现已知真实身份信息。"

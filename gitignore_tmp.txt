@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# 虚拟环境
+venv/
+.venv/
+env/
+ENV/
+
+# 审计案件产物（含数据，不应入库）
+audit_*/
+case*/
+fulltext/
+annotations/
+*.pdf
+*.html
+
+# 凭证与隐私
+.env
+*.key
+*.pem
+creds.bin
+*_credentials*
+
+# OS / 编辑器
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*.tmp
+
+# WorkBuddy 运行态
+.in_use
+.created-by-session
